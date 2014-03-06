@@ -8,7 +8,7 @@
  *
  * Created on 26-nov-2011, 14:33:37
  */
-package practica6;
+package com.mycompany.mavenprojectagenda;
 
 /**
  *

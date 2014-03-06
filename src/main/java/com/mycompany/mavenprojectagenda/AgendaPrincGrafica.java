@@ -8,7 +8,7 @@
  *
  * Created on 22-nov-2011, 17:35:07
  */
-package practica6;
+package com.mycompany.mavenprojectagenda;
 
 import javax.swing.JOptionPane;
 
