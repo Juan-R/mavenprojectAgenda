@@ -6,6 +6,7 @@ package com.mycompany.mavenprojectagenda;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.logging.Logger;
 
     /**
  *
@@ -69,10 +70,11 @@ public class Agenda {
     
     public String mostrarAgenda () {
         
-        if (agenda.isEmpty())
+        if (agenda.isEmpty()) {
             
             return ("La agenda esta vacia." + "\n" + "Vuelva al menu principal"
                     + " y pulse sobre el boton" + "\n" + "\" Añadir una cita \".");
+        }
         
         else {
             
@@ -116,10 +118,12 @@ public class Agenda {
         
         }
         
-        if (aux==null)
+        if (aux==null) {
             return ("No hay ninguna cita que se ajuste a la busqueda.");
-        else
+        }
+        else {
             return (aux.toString());
+        }
            
     }
     
@@ -136,10 +140,12 @@ public class Agenda {
         
         }
         
-        if (formaParte)
-            return (c.toString());   
-        else
-            return ("No hay ninguna cita que se ajuste a la busqueda.");   
+        if (formaParte) {
+            return (c.toString());
+        }   
+        else {   
+            return ("No hay ninguna cita que se ajuste a la busqueda.");
+        }   
 
     }
     
@@ -235,13 +241,7 @@ public class Agenda {
         
         }
         
-        if (encontrada) {
-            this.agenda.remove(c);
-            System.out.println("La cita ha sido eliminada de la agenda.");
-        }
-        else 
-            System.out.println("No se encontro la cita pedida.");
-        
-    } 
+    }
+    private static final Logger LOG = Logger.getLogger(Agenda.class.getName()); 
     
 }

@@ -1,5 +1,6 @@
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,4 +36,5 @@ public class AppTest
     {
         assertTrue( true );
     }
+    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
 }

@@ -10,6 +10,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -78,13 +80,15 @@ public class CitaCompleta extends javax.swing.JPanel {
         
         String a = "Normal";
         
-        if ( this.pAlta.isSelected() ) 
+        if ( this.pAlta.isSelected() ) { 
             
             a = "Alta";
+        }
         
-        else if ( this.pBaja.isSelected() )
+        else if ( this.pBaja.isSelected() ) {
             
             a = "Baja";
+        }
         
         return a;
             
@@ -383,4 +387,5 @@ private void TextoLugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JSpinner segCom;
     private javax.swing.JSpinner segFin;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(CitaCompleta.class.getName());
 }

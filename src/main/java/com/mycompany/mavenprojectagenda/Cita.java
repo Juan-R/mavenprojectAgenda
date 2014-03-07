@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -98,8 +100,9 @@ public class Cita {
 
     public void setPrioridad(String prioridad) {
         
-        if ( (prioridad.equalsIgnoreCase("Baja")) | (prioridad.equalsIgnoreCase("Alta")) | (prioridad.equalsIgnoreCase("Normal")) ) 
+        if ( (prioridad.equalsIgnoreCase("Baja")) | (prioridad.equalsIgnoreCase("Alta")) | (prioridad.equalsIgnoreCase("Normal")) ) {
             this.prioridad=prioridad; 
+        } 
     }
      
     @Override
@@ -113,5 +116,6 @@ public class Cita {
                 + "Prioridad: " + prioridad + "\n");
     
     }    
+    private static final Logger LOG = Logger.getLogger(Cita.class.getName());
     
 }

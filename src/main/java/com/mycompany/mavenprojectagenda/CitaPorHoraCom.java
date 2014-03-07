@@ -10,6 +10,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -138,4 +140,5 @@ public class CitaPorHoraCom extends javax.swing.JPanel {
     private javax.swing.JSpinner minCom;
     private javax.swing.JSpinner segCom;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(CitaPorHoraCom.class.getName());
 }

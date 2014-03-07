@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -42,8 +44,6 @@ public class AgendaPrinc {
         System.out.println(a.posicionCita(new Reloj(12,30)));
         System.out.println(a.posicionCita(new Reloj(15)));
         
-        System.out.println(a.idCita(new Reloj(15,20)));
-        
         a.eliminarCita(new Reloj(12,30));
         
         a.mostrarAgenda();
@@ -53,4 +53,5 @@ public class AgendaPrinc {
         a.mostrarAgenda();
                
     }
+    private static final Logger LOG = Logger.getLogger(AgendaPrinc.class.getName());
 }

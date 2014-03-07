@@ -10,6 +10,7 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -84,14 +85,15 @@ private void busqAsuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     CitaPorAsunto cA = new CitaPorAsunto();
     
     while (cA.extraerAsunto().length()==0 && JOptionPane.showConfirmDialog(this, cA, "Buscar una cita por asunto",
-    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)!=JOptionPane.CANCEL_OPTION)
-    
-    if(cA.extraerAsunto().length()==0)  
-        JOptionPane.showMessageDialog(cA, "Debe introducir un asunto.", "Informacion", WIDTH);
+    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)!=JOptionPane.CANCEL_OPTION) {
+            if (cA.extraerAsunto().length()==0) {
+                JOptionPane.showMessageDialog(cA, "Debe introducir un asunto.", "Informacion", WIDTH);
+            }
+        }
          
-     if( AgendaPrincGrafica.agenda.esVacia() )
-           
-           JOptionPane.showMessageDialog(cA, "La agenda esta vacia.", "Informacion", WIDTH);
+     if( AgendaPrincGrafica.agenda.esVacia() ) {
+            JOptionPane.showMessageDialog(cA, "La agenda esta vacia.", "Informacion", WIDTH);
+        }
      
      else if (cA.extraerAsunto().length()>0){
     
@@ -109,18 +111,15 @@ private void busqHoraComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
         
     if(JOptionPane.showConfirmDialog(this, cHC, "Buscar una cita por hora de comienzo",
     JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE)
-    == JOptionPane.OK_OPTION) 
-        
-         if( AgendaPrincGrafica.agenda.esVacia() )
-           
-           JOptionPane.showMessageDialog(cHC, "La agenda esta vacia.", "Informacion", WIDTH);
-         
-         else {
-        
-        JOptionPane.showMessageDialog(cHC, "Si no hay una cita a esta hora en concreto"
-        + "\n" + "se mostrara la siguiente.", "Informacion", WIDTH);
-        Mostrador m = new Mostrador (AgendaPrincGrafica.agenda.mostrarCita(cHC.extraerHoraInicio()));
-        JOptionPane.showMessageDialog(cHC, m, "Cita buscada", WIDTH); 
+    == JOptionPane.OK_OPTION) {
+            if (AgendaPrincGrafica.agenda.esVacia()) {
+                JOptionPane.showMessageDialog(cHC, "La agenda esta vacia.", "Informacion", WIDTH);
+            } else {
+                JOptionPane.showMessageDialog(cHC, "Si no hay una cita a esta hora en concreto"
+                + "\n" + "se mostrara la siguiente.", "Informacion", WIDTH);
+                Mostrador m = new Mostrador (AgendaPrincGrafica.agenda.mostrarCita(cHC.extraerHoraInicio()));
+                JOptionPane.showMessageDialog(cHC, m, "Cita buscada", WIDTH);
+            } 
          
         }
     
@@ -131,4 +130,5 @@ private void busqHoraComActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JButton busqHoraCom;
     private javax.swing.ButtonGroup buttonGroup1;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(MostrarUnaCita.class.getName());
 }

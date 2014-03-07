@@ -4,6 +4,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -33,9 +35,10 @@ public class Reloj {
         /*      Al no poder utilizar los set dentro de los métodos constructores
             controlo los valores que se introducen en el método mediante un if. */
         
-        if ( (hora>=0) && (hora<=23) )
+        if ( (hora>=0) && (hora<=23) ) {
         
             this.hora=hora;
+        }
         
         min=00;
         seg=00;
@@ -44,13 +47,15 @@ public class Reloj {
     
     public Reloj (int hora, int min) {
         
-        if ( (hora>=0) && (hora<=23) )
+        if ( (hora>=0) && (hora<=23) ) {
         
             this.hora=hora;
+        }
         
-        if( (min>=0) && (min<=59) )
+        if( (min>=0) && (min<=59) ) {
         
             this.min=min;
+        }
         
         seg=00;
     
@@ -58,17 +63,20 @@ public class Reloj {
      
     public Reloj (int hora, int min, int seg) {
         
-        if ( (hora>=0) && (hora<=23) )
+        if ( (hora>=0) && (hora<=23) ) {
         
             this.hora=hora;
+        }
         
-        if( (min>=0) && (min<=59) )
+        if( (min>=0) && (min<=59) ) {
         
             this.min=min;
+        }
         
-        if( (seg>=0) && (seg<=59) )
+        if( (seg>=0) && (seg<=59) ) {
         
             this.seg=seg;
+        }
         
     }
     
@@ -91,9 +99,10 @@ public class Reloj {
 
     public void setHora(int hora) {
         
-        if ( (hora>=0) && (hora<=23) ) 
+        if ( (hora>=0) && (hora<=23) ) { 
         
             this.hora = hora;
+        }
     
     }
 
@@ -103,9 +112,10 @@ public class Reloj {
 
     public void setMin(int min) {
         
-        if( (min>=0) && (min<=59) )
+        if( (min>=0) && (min<=59) ) {
         
             this.min = min;
+        }
     
     }
 
@@ -115,38 +125,17 @@ public class Reloj {
 
     public void setSeg(int seg) {
         
-        if( (seg>=0) && (seg<=59) )
+        if( (seg>=0) && (seg<=59) ) {
         
             this.seg = seg;
+        }
     
     }
     
     public void mostrar24 () {
-        
-        //"+" para la concatenación de strings.
-        
-        System.out.println( this.getHora() + ":" + this.getMin() + ":" + this.getSeg());
-        
     }
     
     public void mostrar12 () {
-        
-        if( (this.getHora()>=01) & (this.getHora()<=11) )
-            
-            System.out.println( this.getHora() + ":" + this.getMin() + ":" + this.getSeg() + " AM" );
-        
-        else if (this.getHora()==00)
-            
-            System.out.println( 12 + ":" + this.getMin() + ":" + this.getSeg() + " AM" );
-        
-        else if ( (this.getHora()>=13) & (this.getHora()<=23) )
-            
-            System.out.println( (this.getHora()-12) + ":" + this.getMin() + ":" + this.getSeg() + " PM" );
-        
-        else if (this.getHora()==12)
-            
-            System.out.println( this.getHora() + ":" + this.getMin() + ":" + this.getSeg() + " PM" );
-        
     }
     
     /*      Para resolver los métodos "siguiente" y "anterior" me he puesto en el peor
@@ -236,9 +225,10 @@ public class Reloj {
                     this.setMin(min%=60);
                     hora+=acum;
                     
-                    if(this.getHora()>=24)
+                    if(this.getHora()>=24) {
                     
                         this.setHora(hora%=24);
+                    }
                 
                 }
             
@@ -271,8 +261,9 @@ public class Reloj {
             
         }
         
-        else
+        else {
             return null;
+        }
           
     }
     
@@ -282,5 +273,6 @@ public class Reloj {
         return (mostrarDosCifras(hora) + ":" + mostrarDosCifras(min) + ":" + mostrarDosCifras(seg));
             
     } 
+    private static final Logger LOG = Logger.getLogger(Reloj.class.getName());
     
 }

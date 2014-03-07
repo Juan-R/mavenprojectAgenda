@@ -10,6 +10,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -65,4 +67,5 @@ public class Mostrador extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea textoAMostrar;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(Mostrador.class.getName());
 }

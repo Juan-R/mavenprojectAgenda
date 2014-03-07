@@ -10,6 +10,8 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author hp
@@ -98,4 +100,5 @@ public class CitaPorAsunto extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(CitaPorAsunto.class.getName());
 }

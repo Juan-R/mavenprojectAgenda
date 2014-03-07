@@ -10,6 +10,7 @@
  */
 package com.mycompany.mavenprojectagenda;
 
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -157,9 +158,9 @@ private void cancelarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
         
         
         
-        if( agenda.esVacia() )
-           
-           JOptionPane.showMessageDialog(cC, "La agenda esta vacia.", "Informacion", WIDTH);
+        if( agenda.esVacia() ) {
+                JOptionPane.showMessageDialog(cC, "La agenda esta vacia.", "Informacion", WIDTH);
+            }
        
         else if ( agenda.existeCita(cC.extraerHoraInicio()) ) {
             
@@ -189,13 +190,15 @@ private void aniadirCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     
         antiErrores= !( (aC.extraerAsunto().length()>0) & (aC.extraerHoraFin().diferenciaHoraria(aC.extraerHoraInicio())>=0) );
         
-        if (antiErrores)  
-            JOptionPane.showMessageDialog(aC, "Falta el asunto o la hora de fin es menor que la de inicio.", "Informacion", WIDTH);
+        if (antiErrores) {
+                JOptionPane.showMessageDialog(aC, "Falta el asunto o la hora de fin es menor que la de inicio.", "Informacion", WIDTH);
+            }
     
     }
     
-    if (!antiErrores)
-        agenda.aniadirCita(aC.extraerCita());
+    if (!antiErrores) {
+            agenda.aniadirCita(aC.extraerCita());
+        }
     
 }//GEN-LAST:event_aniadirCitaActionPerformed
 
@@ -278,4 +281,5 @@ private void mostrarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     private javax.swing.JButton mostrarTodasCitas;
     private javax.swing.JPanel panelAgenda;
     // End of variables declaration//GEN-END:variables
+    private static final Logger LOG = Logger.getLogger(AgendaPrincGrafica.class.getName());
 }
